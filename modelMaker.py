@@ -78,6 +78,7 @@ class CNN:
         img_array = np.expand_dims(img_array, axis=0)
 
         predictions = model.predict(img_array)
+        print(predictions)
         score = tf.nn.softmax(predictions[0])
         class_names = classes
 
@@ -86,7 +87,7 @@ class CNN:
 # path = 'C:\\Users\\Yura\\PycharmProjects\\PythonProjectSchool\\TestTrainingDataset\\data'
 #
 # classes = ['with_mask', 'without_mask']
-# cnn = CNN(classes=2, image_w=128, image_h=128,batch_size=64)
+# cnn = CNN(classes=2, image_w=32, image_h=32,batch_size=64)
 #
 # model = cnn.build_model()
 #
@@ -98,10 +99,10 @@ class CNN:
 #     epochs=3
 # )
 #
-# test_img = 'test.png'
-# test_img2 = 'channels4_profile.jpg'
-# cnn.predict(test_img, model, classes)
-# cnn.predict(test_img2, model, classes)
+# test_img = 'D:\PyProjects\Model_it\Test\\test.png'
+# test_img2 = 'D:\PyProjects\Model_it\Test\channels4_profile.jpg'
+# print(cnn.predict(test_img, model, classes))
+# print(cnn.predict(test_img2, model, classes))
 # model.save('mask_model3.keras')
 
 
